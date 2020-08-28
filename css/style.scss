@@ -170,6 +170,10 @@ body {
             outline-offset: 3px;
         }
 
+        .burger-menu {
+            display: none;
+        }
+
         &-nav {
             display: flex;
 
@@ -624,6 +628,9 @@ body {
     }
 
     .services-content-item {
+        &:nth-child(2n+1) {
+            margin-right: 0;
+        }
 
         &-background {
             margin-right: 0;
@@ -653,23 +660,95 @@ body {
     .header-content {
         &-head {
             flex-direction: column;
+            position: relative;
+
+
+            div.action {
+                display: flex;
+                position: absolute;
+                right: 50px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    background-color: black;
+                    transform: rotate(45deg);
+                    top: 0;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    background-color: black;
+                    transform: rotate(-45deg);
+                    bottom: -2px;
+                }
+            }
+
+            .burger-menu {
+                display: flex;
+                position: absolute;
+                right: 50px;
+
+
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    background-color: black;
+                    top: 10px;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    background-color: black;
+                    bottom: 10px;
+                }
+
+                &__span {
+                    width: 30px;
+                    height: 2px;
+                    background-color: black;
+                    position: absolute;
+                }
+            }
 
             &-logo {
                 width: 90px;
             }
 
             &-nav {
+                display: none;
                 justify-content: flex-end;
                 margin-right: 56px;
 
                 &_item {
                     flex-direction: column;
                 }
+
+                &_li {
+                    margin-bottom: 10px;
+                }
             }
         }
 
         &-title {
             font-size: 25px;
+        }
+    }
+
+    .say-content {
+        &-reviews {
+            padding: 50px 50px;
         }
     }
 }

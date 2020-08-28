@@ -166,6 +166,9 @@ body {
   margin-left: 30px;
   outline-offset: 3px;
 }
+.header-content-head .burger-menu {
+  display: none;
+}
 .header-content-head-nav {
   display: flex;
 }
@@ -526,6 +529,9 @@ body {
     max-width: 100%;
   }
 
+  .services-content-item:nth-child(2n+1) {
+    margin-right: 0;
+  }
   .services-content-item-background {
     margin-right: 0;
     padding: 40px;
@@ -549,18 +555,77 @@ body {
 
   .header-content-head {
     flex-direction: column;
+    position: relative;
+  }
+  .header-content-head div.action {
+    display: flex;
+    position: absolute;
+    right: 50px;
+  }
+  .header-content-head div.action::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    transform: rotate(45deg);
+    top: 0;
+  }
+  .header-content-head div.action::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    transform: rotate(-45deg);
+    bottom: -2px;
+  }
+  .header-content-head .burger-menu {
+    display: flex;
+    position: absolute;
+    right: 50px;
+  }
+  .header-content-head .burger-menu::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    top: 10px;
+  }
+  .header-content-head .burger-menu::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    bottom: 10px;
+  }
+  .header-content-head .burger-menu__span {
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
   }
   .header-content-head-logo {
     width: 90px;
   }
   .header-content-head-nav {
+    display: none;
     justify-content: flex-end;
     margin-right: 56px;
   }
   .header-content-head-nav_item {
     flex-direction: column;
   }
+  .header-content-head-nav_li {
+    margin-bottom: 10px;
+  }
   .header-content-title {
     font-size: 25px;
+  }
+
+  .say-content-reviews {
+    padding: 50px 50px;
   }
 }
